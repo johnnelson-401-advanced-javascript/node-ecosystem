@@ -11,7 +11,7 @@ John Nelson
 
 #### Documentation
 * [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
+* [jsdoc](https://johnnelson-401-advanced-javascript.github.io/node-ecosystem/) (Server assignments)
 * [styleguide](http://xyz.com) (React assignments)
 
 ### Setup

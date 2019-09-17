@@ -103,22 +103,32 @@ describe('performs array validation of', () => {
   const arrayOfObjects = [{}, {}, {}];
   const arrayOfBooleans = [true, false, true];
 
-  it.skip('strings', () => {
+  it('strings', () => {
     expect(validator.isArrayOfStrings(arrayOfStrings)).toBeTruthy();
     expect(validator.isArrayOfStrings(arrayOfNumbers)).toBeFalsy();
     expect(validator.isArrayOfStrings(arrayOfObjects)).toBeFalsy();
     expect(validator.isArrayOfStrings(arrayOfBooleans)).toBeFalsy();
   });
 
-  it.skip('numbers', () => {
-
+  it('numbers', () => {
+    expect(validator.isArrayOfNumbers(arrayOfStrings)).toBeFalsy();
+    expect(validator.isArrayOfNumbers(arrayOfNumbers)).toBeTruthy();
+    expect(validator.isArrayOfNumbers(arrayOfObjects)).toBeFalsy();
+    expect(validator.isArrayOfNumbers(arrayOfBooleans)).toBeFalsy();
   });
 
-  it.skip('objects', () => {
-  
+  it('objects', () => {
+    expect(validator.isArrayOfObjects(arrayOfStrings)).toBeFalsy();
+    expect(validator.isArrayOfObjects(arrayOfNumbers)).toBeFalsy();
+    expect(validator.isArrayOfObjects(arrayOfObjects)).toBeTruthy();
+    expect(validator.isArrayOfObjects(arrayOfBooleans)).toBeFalsy();
   });
 
-  it.skip('booleans', () => {
+  it('booleans', () => {
+    expect(validator.isArrayOfBooleans(arrayOfStrings)).toBeFalsy();
+    expect(validator.isArrayOfBooleans(arrayOfNumbers)).toBeFalsy();
+    expect(validator.isArrayOfBooleans(arrayOfObjects)).toBeFalsy();
+    expect(validator.isArrayOfBooleans(arrayOfBooleans)).toBeTruthy();
   
   });
 });
