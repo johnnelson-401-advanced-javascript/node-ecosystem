@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --verbose --coverage",
     "lint": "eslint '**/*.js'",
-    "test-watch": "jest --verbose --coverage --watch",
+    "test-watch": "jest --verbose --coverage --watchAll",
     "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
   },
   "author": "",

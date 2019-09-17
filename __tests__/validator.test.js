@@ -130,7 +130,7 @@ describe('get validator for', () => {
     expect(validator.getValidator(/* rules */)).toBe(validator.isString);
   });
   
-  it('numbers', () => {
+  it.skip('numbers', () => {
     expect(validator.getValidator(/* rules */)).toBe(validator.isNumber);
   });
 
