@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --coverage",
-    "lint": "eslint '**/*.js'"
+    "lint": "eslint '**/*.js'",
+    "test-watch": "jest --verbose --coverage --watchAll",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +15,8 @@
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.3"
   }
 }

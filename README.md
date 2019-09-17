@@ -6,10 +6,8 @@
 John Nelson
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/1)
+* [travis](https://travis-ci.com/johnnelson-401-advanced-javascript/node-ecosystem/builds/128048112)
 
 #### Documentation
 * [api docs](http://xyz.com) (API servers)
@@ -18,8 +16,8 @@ John Nelson
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` - 3000
+* `MONGODB_URI` - TBD
 
 **or, include an `.env.example`**
 
@@ -30,6 +28,8 @@ John Nelson
     jest --verbose --coverage
   lint
     eslint '**/*.js'
+  test-watch
+    runs the test and continues to watch for changes. 
   
 #### Tests
 Any additional testing information
