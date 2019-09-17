@@ -137,43 +137,43 @@ describe('get validator for', () => {
 
   it('strings', () => {
     // TODO: pass getValidator the rules
-    expect(validator.getValidator(/* rules */)).toBe(validator.isString);
+    expect(validator.getValidator('string')).toBe(validator.isString);
   });
   
-  it.skip('numbers', () => {
-    expect(validator.getValidator(/* rules */)).toBe(validator.isNumber);
+  it('numbers', () => {
+    expect(validator.getValidator('number')).toBe(validator.isNumber);
   });
 
-  it.skip('arrays', () => {
-    
+  it('arrays', () => {
+    expect(validator.getValidator('array')).toBe(validator.isArray);
   });
 
-  it.skip('objects', () => {
-    
+  it('objects', () => {
+    expect(validator.getValidator('object')).toBe(validator.isObject);
   });
 
-  it.skip('booleans', () => {
-    
+  it('booleans', () => {
+    expect(validator.getValidator('boolean')).toBe(validator.isBoolean);
   });
 
-  it.skip('functions', () => {
-    
+  it('functions', () => {
+    expect(validator.getValidator('function')).toBe(validator.isFunction);
   });
 
-  it.skip('array of strings', () => {
-    
+  it('array of strings', () => {
+    expect(validator.getValidator('strings')).toBe(validator.isArrayOfStrings);
   });
 
-  it.skip('array of numbers', () => {
-    
+  it('array of numbers', () => {
+    expect(validator.getValidator('numbers')).toBe(validator.isArrayOfNumbers);
   });
 
-  it.skip('array of objects', () => {
-    
+  it('array of objects', () => {
+    expect(validator.getValidator('objects')).toBe(validator.isArrayOfObjects);
   });
 
-  it.skip('array of booleans', () => {
-    
+  it('array of booleans', () => {
+    expect(validator.getValidator('booleans')).toBe(validator.isArrayOfBooleans);
   });
 
 });
