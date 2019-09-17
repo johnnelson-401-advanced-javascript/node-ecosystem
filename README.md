@@ -18,8 +18,8 @@ John Nelson
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` - 300
+* `MONGODB_URI` - TBD
 
 **or, include an `.env.example`**
 
