@@ -6,33 +6,33 @@
 John Nelson
 
 ### Links and Resources
-* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/1)
+* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/3)
 * [travis](https://travis-ci.com/johnnelson-401-advanced-javascript/node-ecosystem/builds/128048112)
 
 #### Documentation
-* [api docs](http://xyz.com) (API servers)
+<!-- * [api docs](http://xyz.com) (API servers) -->
 * [jsdoc](https://johnnelson-401-advanced-javascript.github.io/node-ecosystem/) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
+<!-- * [styleguide](http://xyz.com) (React assignments) -->
 
 ### Setup
 #### `.env` requirements
-* `PORT` - 3000
-* `MONGODB_URI` - TBD
+<!-- * `PORT` - 3000
+* `MONGODB_URI` - TBD -->
 
 **or, include an `.env.example`**
 
 #### Running the app
 
 **Describe what npm scripts do**
-  test
-    jest --verbose --coverage
   lint
     eslint '**/*.js'
   test-watch
-    runs the test and continues to watch for changes. 
-  
+    jest --watchAll --verbose --coverage
+  jsdoc
+    jsdoc -c ./docs/config/jsdoc.config.json
+
 #### Tests
-Any additional testing information
+Delightfully tested with Jest
 
 #### UML
-Link to an image of the UML for your application and response to events
+<!-- Link to an image of the UML for your application and response to events -->
