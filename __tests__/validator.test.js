@@ -1,4 +1,5 @@
 const validator = require('../lib/validator.js');
+// const { CastError, ModelError } = require('./Errors.js');
 
 describe('validator module performs basic validation of', () => {
 
@@ -175,5 +176,56 @@ describe('get validator for', () => {
   it('array of booleans', () => {
     expect(validator.getValidator('booleans')).toBe(validator.isArrayOfBooleans);
   });
+
+});
+
+describe('get caster for', () => {
+  
+  it('cast as string', () => {
+    let str = 'yes';
+    let num = 1;
+    let arr = ['a'];
+    let obj = {x:'y'};
+    let bool = false;
+    expect(validator.stringCaster(str)).toBe(str);
+    expect(validator.stringCaster(num)).toBe(String(num));
+    expect(validator.stringCaster(bool)).toBe(String(bool));
+    expect(() => validator.stringCaster(obj)).toThrow(validator.CastError);
+    expect(() => validator.stringCaster(arr)).toThrow(validator.CastError);
+
+  });
+  it('cast as boolean', () => {
+    let str = 'yes';
+    let num = 1;
+    let arr = ['a'];
+    let obj = {x:'y'};
+    let bool = false;
+    let stringTrue = 'true';
+    let stringFalse = 'false';
+
+    expect(validator.booCaster(stringTrue)).toBe(true);
+    expect(validator.booCaster(stringFalse)).toBe(false);
+    expect(validator.booCaster(bool)).toBe(bool);
+    expect(() => validator.booCaster(obj)).toThrow(validator.CastError);
+    expect(() => validator.booCaster(arr)).toThrow(validator.CastError);
+    expect(() => validator.booCaster(str)).toThrow(validator.CastError);
+    expect(() => validator.booCaster(num)).toThrow(validator.CastError);
+
+  });
+  it('cast as number', () => {
+    let str = 'yes';
+    let num = 1;
+    let arr = ['a'];
+    let obj = {x:'y'};
+    let numString = ('123');
+    let bool = false;
+    expect(() => validator.numberCaster(str)).toThrow(validator.CastError);
+    expect(validator.numberCaster(num)).toBe(num);
+    expect(validator.numberCaster(numString)).toBe(Number(numString));
+    expect(() => validator.numberCaster(bool)).toThrow(validator.CastError);
+    expect(() => validator.numberCaster(obj)).toThrow(validator.CastError);
+    expect(() => validator.numberCaster(arr)).toThrow(validator.CastError);
+  });  
+
 
 });
