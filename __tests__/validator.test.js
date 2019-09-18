@@ -227,5 +227,21 @@ describe('get caster for', () => {
     expect(() => validator.numberCaster(arr)).toThrow(validator.CastError);
   });  
 
+  it('cast as date', () => {
+    let str = 'yes';
+    let num = 1;
+    let arr = ['a'];
+    let obj = {x:'y'};
+    let standardDate = new Date();
+
+    expect(validator.dateCaster(standardDate)).toEqual(String(standardDate));
+    expect(() => validator.dateCaster(str)).toThrow(validator.CastError);
+    expect(() => validator.dateCaster(num)).toThrow(validator.CastError);
+    expect(() => validator.dateCaster(obj)).toThrow(validator.CastError);
+    expect(() => validator.dateCaster(arr)).toThrow(validator.CastError);
+  });  
+
+
+
 
 });
