@@ -27,11 +27,11 @@ John Nelson
 
 **Describe what npm scripts do**  
   
-  lint  
+* lint  
     eslint '**/*.js'  
-  test-watch  
+* test-watch  
     jest --watchAll --verbose --coverage
-  jsdoc  
+* jsdoc  
     jsdoc -c ./docs/config/jsdoc.config.json
 
 #### Tests  
