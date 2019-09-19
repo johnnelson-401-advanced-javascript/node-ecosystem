@@ -26,7 +26,7 @@ John Nelson
 #### Running the app  
 
 **Describe what npm scripts do**  
-
+  
   lint  
     eslint '**/*.js'  
   test-watch  
