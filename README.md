@@ -1,38 +1,41 @@
-# LAB - 01
+# LAB - 01  
 
-## node-ecosystem
+## node-ecosystem  
 
-### Author: Student/Group Name
+### Author: Student/Group Name  
 John Nelson
 
-### Links and Resources
+### Links and Resources  
 * [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/3)
 * [travis](https://travis-ci.com/johnnelson-401-advanced-javascript/node-ecosystem/builds/128241232)
 
-#### Documentation
+#### Documentation  
 <!-- * [api docs](http://xyz.com) (API servers) -->
 * [jsdoc](https://johnnelson-401-advanced-javascript.github.io/node-ecosystem/) (Server assignments)
 <!-- * [styleguide](http://xyz.com) (React assignments) -->
 
-### Setup
-#### `.env` requirements
-<!-- * `PORT` - 3000
-* `MONGODB_URI` - TBD -->
+### Setup  
+  
+#### `.env` requirements  
+* `PORT` - 3000
+* `MONGODB_URI` - TBD
 
-**or, include an `.env.example`**
 
-#### Running the app
+**or, include an `.env.example`**  
 
-**Describe what npm scripts do**
-  lint
-    eslint '**/*.js'
-  test-watch
+#### Running the app  
+
+**Describe what npm scripts do**  
+  
+* lint  
+    eslint '**/*.js'  
+* test-watch  
     jest --watchAll --verbose --coverage
-  jsdoc
+* jsdoc  
     jsdoc -c ./docs/config/jsdoc.config.json
 
-#### Tests
+#### Tests  
 Delightfully tested with Jest
 
-#### UML
+#### UML  
 <!-- Link to an image of the UML for your application and response to events -->
