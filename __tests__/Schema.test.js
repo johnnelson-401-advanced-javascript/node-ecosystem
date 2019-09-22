@@ -47,6 +47,24 @@ describe('Schema', () => {
   
     expect(() => newSchema.validate(testPerson)).toThrow(ModelError);
   });
+  it('throws on a missing required field', () => {
+    const testPerson = {
+      'lastName': 'Sample',
+      'married': true,
+      'kids': {},
+    };
+    expect(() => newSchema.validate(testPerson)).toThrow(ModelError);
+  });
+
+  it('throws on a casting error on invalid data', () => {
+    const testPerson = {
+      'firstName': 1,
+      'lastName': 'Sample',
+      'married': true,
+      'kids': {},
+    };
+    expect(() => newSchema.validate(testPerson)).toThrow(ModelError);
+  });
 
   // more test cases...
 });
