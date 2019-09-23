@@ -26,7 +26,7 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>
+            <pre class="prettyprint source linenums"><code>const { CastError } = require('./Errors.js');
 /**
  * Based on a set of rules, is the input valid?
  * TODO: Define the rules ... how do we send them in? How do we identify?
@@ -103,9 +103,133 @@ const isFunction = (input) => {
  * @param {array} input 
  * @returns {boolean}
  */
-const isArrayOfStrings = (/*input*/) => {
+const isArrayOfStrings = (input) => {
+  if(isArray(input) === false) {
+    return false;
+  }
+  else if(input.every(isString)) {
+    return true;
+  }
+
+};
+/**
+ * Is this an array of numbers?
+ * @param {array} input 
+ * @returns {boolean}
+ */
+const isArrayOfNumbers = (input) => {
+  if(isArray(input) === false) {
+    return false;
+  }
+  else if(input.every(isNumber)) {
+    return true;
+  }
+
+};
+
+/**
+ * Is this an array of numbers?
+ * @param {array} input 
+ * @returns {boolean}
+ */
+const isArrayOfObjects = (input) => {
+  if(isArray(input) === false) {
+    return false;
+  }
+  else if(input.every(isObject)) {
+    return true;
+  }
+
+};
+
+/**
+ * Is this an array of numbers?
+ * @param {array} input 
+ * @returns {boolean}
+ */
+const isArrayOfBooleans = (input) => {
+  if(isArray(input) === false) {
+    return false;
+  }
+  else if(input.every(isBoolean)) {
+    return true;
+  }
+
+};
+/**
+ * Is this able to be cast as a string?
+ * @returns {string}
+ */
+const stringCaster = (input) => {
+  if(isArray(input) || isObject(input)) {
+    throw new CastError('string', input);  }
+  else {
+    return String(input);
+  }
+
+};
+
+/**
+ * Is this able to be cast as a boolean?
+ * @returns {boolean}
+ */
+const booCaster = (input) => {
+  if(isArray(input) || isObject(input)) {
+    throw new CastError(input);  }
+  else if (typeof(input) === 'boolean') {
+    return input;
+  }  
+  else if(input === 'true') {
+    return true;
+  }
+  else if(input === 'false') {
+    return false;
+  }
+  else {
+    throw new CastError('bool', input);
+  }
   
 };
+
+/**
+ * Is this able to be cast as a number?
+ * @returns {number}
+ */
+const numberCaster = (input) => {
+  if(isArray(input) || isObject(input)) {
+    throw new CastError(input);  
+  }
+  else if (isString(input) &amp;&amp; input.match(/[0-9]/)) {
+    return Number(input);
+  }
+  else if (isNumber(input)) {
+    return input;
+  }
+  else {
+    throw new CastError('number', input);
+  }
+
+};
+/**
+ * Is this a date?
+ * @returns {date}
+ */
+const isDate = input => {
+  return input instanceof Date;
+};
+/**
+ * Is this able to be cast as a date?
+ * @returns {number}
+ */
+const dateCaster = input => {
+  if (isDate(input)) {
+    return String(input);
+  }
+  else {
+    throw new CastError('date', input);
+  }
+};
+
 
 /**
  * Based on a set of rules, what is correct validator?
@@ -113,10 +237,38 @@ const isArrayOfStrings = (/*input*/) => {
  * @param rules
  * @returns {boolean}
  */
-const getValidator = (/*rules*/) => {
-  // CHANGE ME
-  return isString;
+const getValidator = (input) => {
+  const validated = {
+    string: isString,
+    number: isNumber,
+    array: isArray,
+    object: isObject,
+    boolean: isBoolean,
+    function: isFunction,
+    strings: isArrayOfStrings,
+    numbers: isArrayOfNumbers,
+    objects: isArrayOfObjects,
+    booleans: isArrayOfBooleans,
+  };
+  return validated[input];
 };
+/**
+ * Based on a set of rules, what is the right caster?
+ * TODO: Define the rules ... how do we send them in? How do we identify?
+ * @param rules
+ * @returns {boolean}
+ */
+const getCaster = input => {
+  let casted = {
+    string: stringCaster,
+    number: numberCaster,
+    boolean: booCaster,
+    date: dateCaster,
+  };
+  return casted[input];
+};
+
+
 
 module.exports = {
   isString,
@@ -129,9 +281,20 @@ module.exports = {
   // moar types...
 
   isArrayOfStrings,
+  isArrayOfNumbers,
+  isArrayOfObjects,
+  isArrayOfBooleans,
   // moar array types...
 
   getValidator,
+  getCaster,
+
+  //casters
+  stringCaster,
+  booCaster,
+  numberCaster,
+  dateCaster,
+
 };
 </code></pre>
         </article>
@@ -143,13 +306,13 @@ module.exports = {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#getValidator">getValidator</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isArrayOfStrings">isArrayOfStrings</a></li><li><a href="global.html#isBoolean">isBoolean</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isValid">isValid</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Schema.html">Schema</a></li></ul><h3>Global</h3><ul><li><a href="global.html#booCaster">booCaster</a></li><li><a href="global.html#dateCaster">dateCaster</a></li><li><a href="global.html#getCaster">getCaster</a></li><li><a href="global.html#getValidator">getValidator</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#isArrayOfBooleans">isArrayOfBooleans</a></li><li><a href="global.html#isArrayOfNumbers">isArrayOfNumbers</a></li><li><a href="global.html#isArrayOfObjects">isArrayOfObjects</a></li><li><a href="global.html#isArrayOfStrings">isArrayOfStrings</a></li><li><a href="global.html#isBoolean">isBoolean</a></li><li><a href="global.html#isDate">isDate</a></li><li><a href="global.html#isFunction">isFunction</a></li><li><a href="global.html#isNumber">isNumber</a></li><li><a href="global.html#isObject">isObject</a></li><li><a href="global.html#isString">isString</a></li><li><a href="global.html#isValid">isValid</a></li><li><a href="global.html#numberCaster">numberCaster</a></li><li><a href="global.html#stringCaster">stringCaster</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Tue Sep 17 2019 11:39:54 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon Sep 23 2019 15:02:04 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

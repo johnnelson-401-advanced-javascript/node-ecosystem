@@ -1,4 +1,4 @@
-# LAB - 01  
+# LAB - 03  
 
 ## node-ecosystem  
 
@@ -6,8 +6,8 @@
 John Nelson
 
 ### Links and Resources  
-* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/3)
-* [travis](https://travis-ci.com/johnnelson-401-advanced-javascript/lab-00/builds/128402986)
+* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/5)
+* [travis](https://travis-ci.com/johnnelson-401-advanced-javascript/node-ecosystem/builds/128824666)
 
 #### Documentation  
 <!-- * [api docs](http://xyz.com) (API servers) -->
