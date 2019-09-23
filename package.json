@@ -15,8 +15,9 @@
     "eslint": "^6.1.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
-    "short-id": "0.1.0-1",
-    "json-api-rehydrate": "^0.2.2"
+    "json-api-rehydrate": "^0.2.2",
+    "mkdirp": "^0.5.1",
+    "short-id": "0.1.0-1"
   },
   "devDependencies": {
     "jsdoc": "^3.6.3"
