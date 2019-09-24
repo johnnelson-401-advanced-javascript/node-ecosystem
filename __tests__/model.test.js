@@ -1,4 +1,4 @@
-const Schema = require('../lib/schema');
+const Schema = require('../lib/Sschema');
 const Model = require('../lib/model.js');
 const { getCollection } = require('../lib/database');
 const DocumentCollection = require('../lib/document-collection');
