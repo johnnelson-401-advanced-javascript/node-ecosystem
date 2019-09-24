@@ -7,7 +7,7 @@ jest.mock('../lib/database', () => {
 // theAutomaticMock.mock.instances[index].methodName.mock.calls.
 jest.mock('../lib/document-collection');
 
-const Model = require('../lib/model');
+const Model = require('../lib/model.js');
 const Schema = require('../lib/schema');
 const { getCollection } = require('../lib/database');
 const DocumentCollection = require('../lib/document-collection');
@@ -65,6 +65,17 @@ describe('Model', () => {
         expect(created).toEqual(pojo);
       });
   });
+  it('finds all items', () => {
+    const pojo = {
+      name: 'test',
+      id: 4
+    };
 
-  // test rest of model methods. 
+    mockCollection.getAll.mockResolvedValue(pojo);
+
+    return Cats.find(pojo)
+      .then(found => {
+        expect(found).toEqual(pojo);
+      });
+  });
 });
