@@ -1,3 +1,8 @@
+const Schema = require('../lib/schema');
+const Model = require('../lib/model.js');
+const { getCollection } = require('../lib/database');
+const DocumentCollection = require('../lib/document-collection');
+
 jest.mock('../lib/database', () => {
   return {
     getCollection: jest.fn()
@@ -7,10 +12,6 @@ jest.mock('../lib/database', () => {
 // theAutomaticMock.mock.instances[index].methodName.mock.calls.
 jest.mock('../lib/document-collection');
 
-const Model = require('../lib/model.js');
-const Schema = require('../lib/schema');
-const { getCollection } = require('../lib/database');
-const DocumentCollection = require('../lib/document-collection');
 
 const mockCollection = new DocumentCollection('test');
 getCollection.mockResolvedValue(mockCollection);
