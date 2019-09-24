@@ -1,4 +1,4 @@
-# LAB - 03  
+# LAB - 04  
 
 ## node-ecosystem  
 
@@ -6,7 +6,7 @@
 John Nelson
 
 ### Links and Resources  
-* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/6)
+* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/7)
 * [travis](https://travis-ci.com/johnnelson-401-advanced-javascript/node-ecosystem/builds/128824666)
 
 #### Documentation  
@@ -28,7 +28,9 @@ John Nelson
 **Describe what npm scripts do**  
   
 * lint  
-    eslint '**/*.js'  
+    eslint '**/*.js'    
+* test  
+    jest --verbose --coverage",
 * test-watch  
     jest --watchAll --verbose --coverage
 * jsdoc  
