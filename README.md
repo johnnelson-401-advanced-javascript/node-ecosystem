@@ -1,4 +1,4 @@
-# LAB - 03  
+# LAB - 04  
 
 ## node-ecosystem  
 
@@ -28,7 +28,9 @@ John Nelson
 **Describe what npm scripts do**  
   
 * lint  
-    eslint '**/*.js'  
+    eslint '**/*.js'    
+* test  
+    jest --verbose --coverage",
 * test-watch  
     jest --watchAll --verbose --coverage
 * jsdoc  
