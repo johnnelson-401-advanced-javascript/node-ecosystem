@@ -6,7 +6,7 @@
 John Nelson
 
 ### Links and Resources  
-* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/6)
+* [submission PR](https://github.com/johnnelson-401-advanced-javascript/node-ecosystem/pull/7)
 * [travis](https://travis-ci.com/johnnelson-401-advanced-javascript/node-ecosystem/builds/128824666)
 
 #### Documentation  
