@@ -9,7 +9,7 @@ describe('validator module performs basic validation of', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let func = () => {};
     let bool = false;
     expect(validator.isString(str)).toBeTruthy();
@@ -24,7 +24,7 @@ describe('validator module performs basic validation of', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let func = () => {};
     let bool = false;
     expect(validator.isNumber(str)).toBeFalsy();
@@ -39,7 +39,7 @@ describe('validator module performs basic validation of', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let func = () => {};
     let bool = false;
     expect(validator.isArray(str)).toBeFalsy();
@@ -54,7 +54,7 @@ describe('validator module performs basic validation of', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let func = () => {};
     let bool = false;
     expect(validator.isObject(str)).toBeFalsy();
@@ -69,7 +69,7 @@ describe('validator module performs basic validation of', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let func = () => {};
     let bool = false;
     expect(validator.isBoolean(str)).toBeFalsy();
@@ -84,7 +84,7 @@ describe('validator module performs basic validation of', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let func = () => {};
     let bool = false;
     expect(validator.isFunction(str)).toBeFalsy();
@@ -185,7 +185,7 @@ describe('get caster for', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let bool = false;
     expect(validator.stringCaster(str)).toBe(str);
     expect(validator.stringCaster(num)).toBe(String(num));
@@ -198,7 +198,7 @@ describe('get caster for', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let bool = false;
     let stringTrue = 'true';
     let stringFalse = 'false';
@@ -216,7 +216,7 @@ describe('get caster for', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let numString = ('123');
     let bool = false;
     expect(() => validator.numberCaster(str)).toThrow(validator.CastError);
@@ -231,7 +231,7 @@ describe('get caster for', () => {
     let str = 'yes';
     let num = 1;
     let arr = ['a'];
-    let obj = {x:'y'};
+    let obj = { x:'y' };
     let standardDate = new Date();
 
     expect(validator.dateCaster(standardDate)).toEqual(String(standardDate));
